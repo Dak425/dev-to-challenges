@@ -21,12 +21,12 @@ func TestTrip_Richest(t *testing.T) {
 		{
 			baseTestCase{"no students"},
 			Trip{},
-			"all",
+			"none",
 		},
 		{
 			baseTestCase{"one student"},
 			Trip{[]Student{mary}},
-			"all",
+			mary.Name,
 		},
 		{
 			baseTestCase{"many students with same amount of funds"},

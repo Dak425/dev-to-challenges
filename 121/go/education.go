@@ -5,8 +5,12 @@ type Trip struct {
 }
 
 func (t Trip) Richest() string {
-	if len(t.Students) < 2 {
-		return "all"
+	sCount := len(t.Students)
+	if sCount == 0 {
+		return "none"
+	}
+	if sCount == 1 {
+		return t.Students[0].Name
 	}
 	poorest, richest := t.Students[0], t.Students[0]
 	for i := 1; i < len(t.Students); i++ {
