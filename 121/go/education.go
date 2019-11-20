@@ -13,7 +13,7 @@ func (t Trip) Richest() string {
 		return t.Students[0].Name
 	}
 	poorest, richest := t.Students[0], t.Students[0]
-	for i := 1; i < len(t.Students); i++ {
+	for i := 1; i < sCount; i++ {
 		if t.Students[i].Funds() < poorest.Funds() {
 			poorest = t.Students[i]
 		} else if t.Students[i].Funds() > richest.Funds() {
